@@ -26,6 +26,8 @@ func main() {
 		}(id)
 		time.Sleep(150 * time.Millisecond)
 	}
+
+	time.Sleep(2 * time.Second)
 }
 
 func queryCache(id int) (Book, bool) {
