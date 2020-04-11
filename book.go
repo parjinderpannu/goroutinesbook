@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Book structure
 type Book struct {
 	ID            int
 	Title         string
@@ -9,6 +10,7 @@ type Book struct {
 	YearPublished int
 }
 
+// String to display Book
 func (b Book) String() string {
 	return fmt.Sprintf(
 		"Title:\t\t%q\n"+
