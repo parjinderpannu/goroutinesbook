@@ -24,7 +24,7 @@ func main() {
 				fmt.Println(b)
 			}
 		}(id)
-		time.Sleep(150 * time.Millisecond)
+		// time.Sleep(150 * time.Millisecond)
 	}
 }
 
