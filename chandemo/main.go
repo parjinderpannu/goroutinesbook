@@ -17,6 +17,7 @@ func main() {
 	}(ch, wg)
 	go func(ch chan<- int, wg *sync.WaitGroup) {
 		ch <- 42
+		close(ch)
 		time.Sleep(5 * time.Millisecond)
 		wg.Done()
 	}(ch, wg)
