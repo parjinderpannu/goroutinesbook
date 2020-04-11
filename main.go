@@ -20,6 +20,10 @@ func main() {
 				fmt.Println("from cache")
 				fmt.Println(b)
 			}
+			if _, ok := queryCache(id); !ok {
+				fmt.Printf("\nnot found in cache\n")
+			}
+
 			wg.Done()
 		}(id, wg)
 		go func(id int, wg *sync.WaitGroup) {
