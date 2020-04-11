@@ -29,6 +29,7 @@ func main() {
 			}
 			wg.Done()
 		}(id, wg)
+		time.Sleep(150 * time.Millisecond)
 	}
 
 	wg.Wait()
@@ -43,7 +44,7 @@ func queryDatabase(id int) (Book, bool) {
 	time.Sleep(100 * time.Millisecond)
 	for _, b := range books {
 		if b.ID == id {
-			// cache[id] = b
+			cache[id] = b
 			return b, true
 		}
 	}
