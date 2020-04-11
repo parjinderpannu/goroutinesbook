@@ -16,6 +16,7 @@ func main() {
 	}(ch, wg)
 	go func(ch chan int, wg *sync.WaitGroup) {
 		ch <- 42
+		ch <- 27
 		wg.Done()
 	}(ch, wg)
 
